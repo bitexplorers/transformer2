@@ -1,0 +1,1040 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>transformer</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+	<meta name="viewport" content="width=browser-width , initial-scale=1">
+
+	<link rel="preload" href="Tomorrow-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+	<link rel="preload" href="Tomorrow-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+	<link rel="preload" href="jetbrainsmono-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ///grid styles-->
+<style>
+	/* .bgmask {
+  -webkit-mask-image: url(img/bgmask.png);
+  mask-image: url(img/bgmask.png);
+  -webkit-mask-size: 640px 640px;
+  mask-size: 640px 640px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;    
+} */
+
+
+
+
+
+	body {
+				background:
+				/* linear-gradient(rgba(255, 255, 255, 0.7), */
+				/* rgba(221, 221, 221, 0.7)), */
+				url("img/bg01.png");
+				/* url("img/bg01.png"); */
+
+
+
+				background-size: 100%;
+				/* kolor tekstów all */
+				color: #202020;
+	}
+
+
+	.showHide {
+		display: none;
+	}
+
+	/* Desktop*/
+	@media screen and (min-width: 1200px) {
+
+		.showHide {
+			display: block;
+		}
+
+	}
+
+
+
+	/* @media screen and (min-width: 1200px) {
+	#body{
+		margin-left:0%;
+		margin-right:0%;
+		margin-bottom:0px;
+	}
+} */
+
+
+
+	.txt {
+		word-wrap: break-word;
+
+		max-width: 105ch;
+		/* max-width: 50%; */
+		/* max-width: min(105ch, 50%); */
+		text-align: justify;
+		/* background-color: #2e2e2e36; */
+		/* background-color: #ffffff3a; */
+		padding: 0.5em 0.5em;
+		padding: 1em 1em;
+	}
+
+	.txtfield {
+		/* background-color: #ffffff3a; */
+
+		background-image: linear-gradient(to right, #ffffff3a, #ffffff00);
+		/* border-radius:0.6vw; */
+		width: 100%;
+	}
+
+	.txtdark {
+		word-wrap: break-word;
+
+		max-width: 105ch;
+		/* max-width: min(105ch, 50%); */
+		/* max-width: 3ch; */
+		text-align: justify;
+		color: #ffffff;
+		/* background-color: #2e2e2e36; */
+		background-color: #000000b9;
+		padding: 1em 1em;
+	}
+
+	.hig {
+		/* font-family: 'Tomorrow-Regular'; */
+		font-size: 12pt;
+		background-color: #000000;
+		float: left;
+
+		font-family: 'Tomorrow';
+		/* font-weight: 500; */
+		font-weight: normal;
+
+		padding: .2em .4em;
+
+		background-clip: padding-box;
+
+
+		font-style: normal;
+
+
+		/* text-indent: -5%; */
+		/* font-weight:600; */
+
+	}
+
+	.apla {
+		width: 100%;
+		/* height: 30px; */
+		height: min(30px,auto);
+		display: flex;
+		align-items: left;
+		padding-bottom: 0.5em;
+	}
+
+	.hig2 {
+
+
+
+		font-size: 12pt;
+		background-color: #000000;
+		float: left;
+		color: #ffffff;
+		font-family: 'Tomorrow';
+		/* font-weight: 500; */
+		font-weight: normal;
+
+		padding: .4em .4em;
+
+		background-clip: padding-box;
+
+
+		font-style: normal;
+		text-align: center;
+
+		top: .1em;
+
+
+		width: max-content;
+	}
+
+
+
+	.container {
+		display: flex;
+		align-items: center;
+	}
+
+	.image-container {
+		overflow: hidden;
+		max-width: 500px;
+		height: 100%;
+		flex-shrink: 0;
+	}
+
+	.image {
+		width: 100%;
+		height: auto;
+		max-height: 30px;
+	}
+
+
+	/*	<!-- ///grids --> */
+
+	.main {
+		grid-area: main;
+	}
+
+	.med {
+		grid-area: med;
+	}
+
+	.sml {
+		grid-area: sml;
+	}
+
+	.sml img {
+		float: left;
+		height: 99%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.grid1 {
+
+		display: grid;
+		grid-template-areas:
+			'main main med'
+			'main main sml';
+		grid-gap: .3vw;
+	}
+
+	.grid {
+		/* padding-right: -52px; */
+		/* padding-top: 0.3vw; */
+		/* margin-right: -.3vw; */
+		display: grid;
+		/* grid-template-columns: repeat(4,1fr); */
+		grid-auto-flow: column;
+		/* grid-template-rows: repeat(auto-fill); */
+		/* grid-template-columns: auto auto auto auto auto auto auto auto auto ; */
+		grid-gap: 0.3vw;
+		grid-auto-rows: 1fr;
+
+		/* grid-gap: 4px; */
+		/* width:100%; */
+	}
+
+
+
+
+
+	.gridh {
+		display: grid;
+		/* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+		grid-template-columns: auto auto auto auto auto;
+		grid-template-rows: 7.5vw;
+		grid-gap: 0.3vw;
+		overflow: hidden;
+		/* Hide the overflow (crop) */
+		padding-top: 0.3vw;
+	}
+
+	.gridhd {
+		display: grid;
+		/* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+		grid-template-columns: auto auto auto auto auto;
+		grid-template-rows: 10vw;
+		grid-gap: 0.3vw;
+		overflow: hidden;
+		/* Hide the overflow (crop) */
+		padding-top: 0.3vw;
+	}
+
+	.gridh img {
+		/* max-height:60%; Set a constant height */
+		width: 100%;
+		/* Allow variable width */
+		object-fit: cover;
+		/* Crop the images as needed */
+		/* max-width: 100%; */
+		/* width: 100%; */
+		height: 100%;
+
+	}
+
+	.gridhd img {
+		width: 100%;
+		/* Allow variable width */
+		object-fit: cover;
+		/* Crop the images as needed */
+		height: 100%;
+
+	}
+
+
+	.gridvar {
+		display: grid;
+		grid-template-columns: var(--col);
+		grid-template-rows: var(--row);
+		grid-gap: 0.3vw;
+	}
+
+
+
+	.grid2 {
+		padding-top: 0.3vw;
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-gap: 0.3vw;
+	}
+
+	.grid3 {
+		padding-top: 0.3vw;
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 0.3vw;
+	}
+
+	.grid4 {
+		padding-top: 0.3vw;
+		display: grid;
+		grid-template-columns: auto auto auto auto;
+		grid-gap: 0.3vw;
+	}
+
+	.grid5 {
+		padding-top: 0.3vw;
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		grid-gap: 0.3vw;
+	}
+
+	.grid6 {
+		padding-top: 0.3vw;
+		display: grid;
+		grid-template-columns: auto auto auto auto auto auto;
+		grid-gap: 0.3vw;
+	}
+
+	.grid img {
+		border-radius: 0.5vw;
+		float: left;
+	}
+
+
+
+	.grid2 img {
+		border-radius: 0.5vw;
+		float: left;
+	}
+
+	.grid3 img {
+		border-radius: 0.4vw;
+		float: left;
+	}
+
+	.grid4 img {
+		border-radius: 0.3vw;
+		float: left;
+	}
+
+	.grid5 img {
+		border-radius: 0.2vw;
+		float: left;
+	}
+
+	img {
+		/* border-radius:0.6vw; */
+		float: left;
+	}
+
+	.grid1 img {
+		object-fit: cover;
+		/* width: 100%; 
+ max-width: 150%;  */
+		height: inherit;
+		border-radius: 0.6vw;
+		float: left;
+	}
+	.button {
+			/* background-color: #383838; */
+			background-color: #fafafa42;
+			border: none;
+			/* color: white; */
+			color: rgb(0, 0, 0);
+			margin-right: 0;
+			margin-left: 0;
+			/* align-items: right; */
+			/* to tylko do marginu od litery do bordera */
+			/* padding: 0px 8px;  */
+			width: 1.5em;
+			text-align:center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 13pt;
+			font-weight: 600;
+			/* margin: 4px 2px; */
+			cursor: pointer;
+			}
+
+/*
+
+.image-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .image-row img {
+        width: 20%; 
+        margin: 0 6%;
+        height: auto;
+        max-height: 200px;
+    }
+
+*/
+
+
+	ul {
+
+		list-style-position: outside;
+	}
+
+
+
+
+	/*	<!-- ///board --> */
+
+
+
+
+.image-containerx 
+{
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0% auto;
+	/* background-color: white; */
+
+}
+.image-containerx img 
+{
+	height: auto;
+	margin: 3%;
+}
+
+.img1 {width: 20%;}
+.img2 {width: 15%;}
+.img3 {width: 15%;}
+.img4 {width: 10%;}
+.img5 {width: 9%;}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+<div>
+
+
+		<div>
+			<!-- ///intro -->
+
+			<picture>
+				<!-- <source media="(min-width: 900px)" srcset="svg/intro01.jpg"> -->
+				<source media="(max-width: 520px)" srcset="svg/intro04.png">
+				<img src="svg/intro01.png" alt="Long Bar SVG" style="width: 104%; margin-top: -.8em;
+height: inherit;
+text-align: left;
+opacity: 100%;
+margin-bottom: 0pt;
+margin-left: -2%;
+
+"
+>
+			</picture>
+
+
+		</div>
+
+<!-- ///script zoom-->
+
+
+
+<script>
+	function myFunction1() {
+	//   document.getElementById("algox").style.fontSizeAdjust = "0.25";
+	//     document.getElementById("algox").style.color = "grey";
+
+
+		var elements = document.getElementsByClassName('txt');
+
+		for (var i = 0; i < elements.length; i++) {
+		var element = elements[i];
+
+		element.style.fontSize = "9pt";
+		// element.style.fontFamily = "'jetbrains_monoregular', Courier";
+		element.style.lineHeight = "13pt";
+		element.style.fontWeight = "100";
+		}
+
+		var elements2 = document.getElementsByClassName('hig2');
+
+		for (var i = 0; i < elements2.length; i++)
+		{
+			var element2 = elements2[i];
+			element2.style.fontSize = "12pt";
+		}
+	var elements = document.getElementsByClassName('txtdark');
+
+		for (var i = 0; i < elements.length; i++) {
+		var element = elements[i];
+
+		element.style.fontSize = "9pt";
+		element.style.lineHeight = "13pt";
+		}
+
+
+		
+
+	}
+
+
+</script>
+
+<script>
+	function myFunction2() {
+	//   document.getElementById("algox").style.fontSizeAdjust = "1.5";
+	//   document.getElementById("algox").style.color = "black";
+
+
+		var elements = document.getElementsByClassName('txt');
+
+		for (var i = 0; i < elements.length; i++) {
+		var element = elements[i];
+		
+		element.style.fontSize = "13pt";
+		// element.style.fontFamily =  "Arial, Helvetica, sans-serif";
+		element.style.lineHeight = "16pt";
+		element.style.fontWeight = "400";
+		// element.style.color= "black";
+		// element.style.maxWidth = "10em";
+		}
+
+		var elements2 = document.getElementsByClassName('hig2');
+
+		for (var i = 0; i < elements2.length; i++) {
+		var element2 = elements2[i];
+		element2.style.fontSize = "17pt";
+		// element2.style.fontSize = "4em";
+		}
+
+		
+		var elements3 = document.getElementsByClassName('txtdark');
+
+		for (var i = 0; i < elements3.length; i++) {
+		var element3 = elements3[i];
+
+		element3.style.fontSize = "13pt";
+		element3.style.lineHeight = "16pt";
+		}
+
+
+
+
+	}
+</script>
+
+
+
+
+<!-- <div id="algox"> -->
+
+
+
+
+		<!-- ///what is -->
+
+		<div class="apla">
+			<div style="width: 100%; display: flex; justify-content: space-between;">
+						<div class="hig2"> &nbsp; What is transformer? &nbsp; </div>
+							<div style="padding: 0px 0px; margin-right: 0;">
+								<button class="button" onclick="myFunction1()"> - </button>
+								<button class="button" onclick="myFunction2()"> + </button>
+							</div>
+			</div>
+		</div>
+
+
+	<div class="txtfield ">
+		<div class="txt">
+			Transformer is an artistic installation in the field of generative art. The installation will take the form of a
+			machine whose task will be to change the profile of the global economy by replacing fossil fuels with green
+			energy.
+		</div>
+	</div>
+
+
+	<div style="width: 100%; height: 0.5vw;"></div>
+
+
+<!--/// vimeo player -->
+
+		<!-- <div class="bgmask">
+		<img src="img\011.jpg" >
+		</div> -->
+			<div class="grid">
+		<img src="img\TRANSFORMER_MAIN_0015.jpg">
+
+			</div>
+
+<!-- 
+	
+	<div class="grid">
+		<div style="padding:56.25% 0 0 0;position:relative;"><iframe
+				src="https://player.vimeo.com/video/780059500?h=15fa7d6cdd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+				frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+				style="position:absolute;top:0;left:0;width:100%;height:100%;"
+				title="xTransformer_Art Installaltion_Concept"></iframe></div>
+		<script src="https://player.vimeo.com/api/player.js"></script>
+	</div>
+
+ -->
+
+	<!-- <div class="grid1">
+
+	<div class="main">
+		<img src="img\011.jpg">
+	</div>
+
+	<div class="med">
+		<img src="img\007.jpg">
+	</div>
+
+	<div class="sml">
+		<img src="img\006.jpg">
+</div>
+
+
+</div> -->
+
+	&nbsp;links: <a href="https://vimeo.com/780059500/15fa7d6cdd">Youtube</a>
+	<a href="https://vimeo.com/780059500/15fa7d6cdd">
+		Vimeo</a>
+
+
+
+	<div style="width: 100%; height:6vw;"></div>
+
+
+	<!-- ///how -->
+
+	<div class="apla">
+		<div class="hig2"> &nbsp; How it works &nbsp; </div>
+	</div>
+
+
+
+	<div class="txtfield">
+		<div class="txt">
+			The machine's task will be to extract funds from recipients and then reinvesting them in financial instruments
+			from the energy sector. The machine will function according to an algorithm whose goal is to transfer capital from
+			the area fossil fuels in favor of ecological energy sources. In this process, through programmed algorithm paired
+			with the brokerage application, the machine will operate on financial instruments such as company shares and
+			commodity contracts. Programmed the algorithm will be able to raise funds, invest, succeed or go bankrupt.
+
+		</div>
+	</div>
+	<!-- <use link:href="slant"></use> -->
+
+	<div style="width: 100%; height: 0.5vw;"></div>
+
+
+	<div class="grid1">
+
+		<div class="main">
+			<img src="img\TRANSFORMER_MAIN_0014.jpg">
+		</div>
+
+		<div class="med">
+			<img src="img\TRANSFORMER_MAIN_0029.jpg">
+
+		</div>
+
+		<div class="sml">
+			<img src="img\TRANSFORMER_MAIN_0037.jpg">
+		</div>
+
+
+	</div>
+	<!-- <div class="grid">
+	<img src="img\004.jpg">
+
+
+
+	<img src="img\005.jpg">
+
+	
+</div> -->
+
+
+
+	<div style="width: 100%; height: 10vw;"></div>
+
+
+	<!-- ///vis -->
+
+	<!-- <div id="viz"> -->
+
+
+	<div class="apla">
+		<div class="hig2"> &nbsp; Visualization of the process &nbsp; </div>
+	</div>
+
+	<div class="grid">
+
+		<img src="img\TRANSFORMER_MAIN_0040.jpg">
+		<img src="img\TRANSFORMER_MAIN_0035.jpg">
+		<img src="img\TRANSFORMER_MAIN_0028.jpg">
+	</div>
+
+	<div style="width: 100%; height: 0.5vw;"></div>
+
+	<div class="txtfield">
+		<div class="txt">
+			An important part of the installation will be translating complex economic processes into language readable to
+			recipients without economic competences. The machine will present the effects of your business by mapping stock
+			exchange data (charts, current balance sheet, total transferred capital), but also by visualizing social and
+			ecological processes, which are supported by complex stock exchange operations (tree planting, water purification,
+			improving air quality).
+		</div>
+	</div>
+
+
+	<!-- ///algo -->
+
+	<div style="width: 100%; height: 10vw;"></div>
+
+	<div class="apla">
+		<div class="hig2" style="background-color: #c3fe9aff; color: black; font-weight: 500;"> &nbsp; The alghoritm &nbsp;
+		</div>
+	</div>
+
+	<div>
+
+		<div class="grid">
+
+
+
+	<!-- </div>viz end -->
+
+
+
+			<div id="algo">
+
+
+
+
+
+
+
+				<div class="txtfield">
+					<div class="txt">
+						Through numerous data mapping mechanisms and visualization of the effects of financial transactions, the
+						recipient will be able to observe how capital flows and what effects it has on environment. All these
+						processes
+						will be reflected through,generated on the basis data from markets, processes visualized in a spatial form.
+						They
+						will be used mechanisms such as multimedia projections, mechanical visualizations, light installations and
+						audio.
+						<br>
+						<br>
+						Machine funds are topped up using payment cards. The application is carefully recorded on systems connected
+						to
+						charts, indicators and visible in our results from the information here visualized using flow meters in
+						telecommunications channels, electromagnets and punched characters resembling machine codes (but also the
+						classic system of recorded main units).
+
+						<br>
+						<br>
+
+						The payments give the impression that the machines are involved in a huge office process, the meaning of
+						which
+						is not understandable. Overwhelming influences cause screeching sounds, shaking, combustion-driven needle
+						devices that produce incomprehensible prints for receivers that work or act upon receipt of interaction.
+						<br>
+					</div>
+				</div>
+
+				<div class="txtdark">
+
+
+					This is where the first doubt arises: are all the consents, regulations, and statements produced by the
+					machine
+					worth the price? Don't bureaucratic processes generate more waste than value (are they not a snake eating its
+					own
+					tail?)
+
+				</div>
+
+				<div class="txtfield">
+					<div class="txt">
+
+						<br>
+						The step by step working alghoritm may look like this:
+						<ul>
+
+
+							<li>The machines top up the fund using a payment card.</li>
+
+							<li>Each investment is carefully recorded on a system of complex charts, indicators and forms of
+								information
+								flow visible before our eyes, here visualized using substances flowing in numerous channels,
+								electromagnets
+								and punched symbols resembling machine code (but also the classic stock exchange order quotation
+								system).
+							</li>
+							<li>Depositing funds gives the impression of sending the machine into a huge bureaucratic process, the
+								meaning
+								of which we do not understand. The overwhelming impression is intensified by the screeching sound of
+								shaking, combustion-driven dot-matrix printer engines, which prepare incomprehensible forms confirming
+								the
+								transaction for recipients.</li>
+							<br>
+							more >
+
+						</ul>
+
+
+					</div>
+				</div>
+
+
+
+
+
+			</div><!-- algo end -->
+
+
+
+			<div class="showHide" style="padding-left: 1em;">
+				<!--expand/collapse div-->
+				<img src="img/schema.jpg" style=" height:100%; width:100%;  object-fit: cover;">
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+	<!-- ///timeframes -->
+
+	<div style="width: 100%; height: 12vw;"></div>
+
+
+	<div class="apla">
+		<div class="hig2"> &nbsp; Timeframes &nbsp; </div>
+	</div>
+
+
+
+
+
+
+	<div style="  
+width: 100%;
+display: flex;
+justify-content: center;
+">
+
+
+		<img src="svg/time03.png" alt="Long Bar SVG" style="   width: 90%;
+	height:auto; padding-top: 4vw; padding-bottom: 12vw;
+">
+
+	</div>
+
+
+
+
+
+
+
+
+	<!-- ///whoweare -->
+
+
+	<div class="apla">
+		<div class="hig2"> &nbsp; Who we are &nbsp; </div>
+	</div>
+
+
+
+
+
+
+
+
+	<div style="width: 100%; height: 13vw; ; display: flex;">
+
+		<div style="width: auto; height: 100%; ">
+			<img src="svg/mywide.jpg" style="height: 100%; width: auto; border-radius: 0.5vw;">
+		</div>
+
+		<!-- Transparent spacer -->
+		<div style="flex: 0 0 0.5%; height: 100%; background-color: rgba(240, 140, 240, 0);"></div>
+
+		<div style="flex: 1; height: 100%;display: flex;">
+
+			<img src="svg/grass.jpg" style="border-radius: 0.5vw; width: 100%; height: 100%; object-fit: cover;">
+
+		</div>
+
+	</div>
+	<div style="width: 100%; height: 0.5vw;"></div>
+
+	<div class="txtfield">
+
+		<div class="txt">
+			We are a team of artists and friends from the Academy of Fine Arts in Wrocław. We currently live in different
+			places in Poland, but we still cooperate in the field of art, artistic education and activities in the field of
+			cultural popularization. We established the Bit Explorers Research Team out of the desire to implement projects at
+			the intersection of art and science. We want to implement technologically advanced installations, based on the
+			experience of fields such as: generative art, mixed media, digital art, experimental interface. Through artistic
+			expression based on new media, we want to sensitize recipients to the problems of the modern world. We care about
+			a pro-social message, expressed through an imaginative form. We are united by common ideas in art and the desire
+			to search for new materials for artistic expression, drawn from the socio-economic processes taking place around
+			us.
+
+		</div>
+
+	</div>
+
+	<div style="width: 100%; height:5em;"></div>
+
+
+	<div>
+		<img src="svg/outro01.png" alt="Long Bar SVG" style="width: 100%; height: auto; float: none; display: block;
+
+height: inherit;
+text-align:center
+;
+opacity: 100%;
+
+">
+
+
+		<div style="width: 100%; height: 2vw;">
+
+		</div>
+
+	</div>
+
+<br><br>
+
+
+<!-- <div class="image-row">
+        <img src="svg/loga/CRPK_outdoor_poziom_1.svg" alt="Image 1">
+        <img src="svg/loga/FWC 4.png" alt="Image 2">
+        <img src="svg/loga/rsk.svg" alt="Image 3">
+        <img src="svg/loga/ministerstwo.svg" alt="Image 4">
+    </div> -->
+
+
+
+	<!-- ///plakat -->
+<!-- <div style="width: 100%; text-align: center;"> -->
+  <a href="img/plakat.pdf" target="_blank" style="display: flex; justify-content: center; text-align: center; padding: 2%; font-family: Helvetica; font-size: 11pt; color: rgb(26, 26, 26);">
+Dotacja
+  </a>
+<!-- </div> -->
+		
+
+	<!-- ///board rozdzielny-->
+	<!-- <div class="image-containerx">
+                <img src="svg/loga/ministerstwo.svg" alt="Image 1" class="img1">
+                <img src="svg/loga/CRPK_outdoor_poziom_1.svg" alt="Image 2" class="img2">
+                <img src="svg/loga/rsk.svg" alt="Image 3" class="img3">
+                <img src="svg/loga/uniwersytet-slaski_h.png" alt="Image 4" class="img4">
+                <img src="svg/loga/FWC 4.png" alt="Image 5" class="img5">
+    </div> -->
+
+
+
+
+
+		<!-- ///napis-->				
+
+	<!-- <div style="width: 96%; display: flex; justify-content: center; text-align: center; padding: 2%; font-family: Helvetica; font-size: 11pt; margin: 0 auto;">
+
+
+
+Dofinansowano ze środków Ministra Kultury i Dziedzictwa Narodowego w ramach programu własnego Centrum Rozwoju Przemysłów Kreatywnych: Rozwój Sektorów Kreatywnych
+
+	</div> -->
+		
+
+	<!-- ///logoboard merged -->
+
+	    <img src="svg/loga/loga_razem.png" alt="Long Bar SVG" style="width: 104%; margin-top: -.8em;
+		height: inherit;
+text-align: left;
+opacity: 100%;
+margin-bottom: 0pt;
+margin-left: -2%;
+
+"
+>
+
+
+<br><br>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+﻿
+
+
+
+
+
+body
+{
+	font-family: 'jetbrains_monoregular', Courier;
+	/* src: url('jetbrainsmono-regular-webfont.woff2') format('woff2'), */
+	/* url('jetbrainsmono-regular-webfont.woff') format('woff'); */
+	/* font-weight: normal;
+	font-style: normal; */
+
+
+
+	/* font-family: Jetbrains Mono; */
+	/* font-family: 'JetBrains Mono', sans-serif; */
+	font-weight:100;
+	color: #dbdbdb;
+
+
+	/* font-size: clamp(9px, 1.4vw, 14px); */
+
+	font-size: 9pt;
+	background-color: #858585 !important;
+
+	/* background-color: rgb(109, 109, 109); */
+
+	line-height: 13pt;
+
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom:0px;
+
+
+
+	
+	
+	/* @media screen and (orientation: landscape) {
+
+	} */
+	
+
+
+
+	display: block;
+	float:left; 
+
+
+
+}
+
+@media (orientation: portrait) and (max-width: 520px) {
+	body {
+		margin-left:2%;
+		margin-right:2%;
+		/* margin-bottom:2px; */
+	}
+}
+
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none; 
+  color: rgb(141, 196, 101);
+}
+
+a:hover
+{
+  text-decoration: none; 
+  color: rgb(116, 194, 60);
+}
+
+ul
+{
+  list-style-position: outside;
+}
+
+
+
+@font-face {
+	font-family: 'jetbrains_monoregular';
+	src: url('jetbrainsmono-regular-webfont.woff2') format('woff2'),
+				url('jetbrainsmono-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+
+@font-face {
+	font-family: 'Tomorrow';
+	src: url('Tomorrow-Medium.woff2') format('woff2'),
+			url('Tomorrow-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Tomorrow';
+	src: url('Tomorrow-Regular.woff2') format('woff2'),
+			url('Tomorrow-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+img 
+{
+	width: 100%;
+	height: inherit;
+	/*box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.1);*/ /*shift, size*/
+	align-items: center;
+}
+
